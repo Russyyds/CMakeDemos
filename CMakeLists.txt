@@ -39,3 +39,5 @@ FetchContent_Declare(
 )
 FetchContent_MakeAvailable(fmt)
 target_link_libraries(${TARGET1} PUBLIC fmt::fmt)
+
+install(TARGETS ${TARGET1} DESTINATION bin)
