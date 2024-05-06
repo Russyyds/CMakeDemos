@@ -27,6 +27,32 @@ or
  sudo cmake  --build build -- install
 ```
 
+执行测试用例
+```bash
+$ cmake --build build -- test
+Running tests...
+Test project /data/jmtang/codes/CMakeDemos/build
+    Start 1: example_test
+1/1 Test #1: example_test .....................   Passed    0.00 sec
+
+100% tests passed, 0 tests failed out of 1
+
+Total Test time (real) =   0.01 sec
+```
+```bash
+$ ./build/test/simple_test 
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from MyMathTest
+[ RUN      ] MyMathTest.vector_sum
+[       OK ] MyMathTest.vector_sum (0 ms)
+[----------] 1 test from MyMathTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+```
+
 ## 文字版教程
 
 [CMake引用自定义库和第三方库](https://zhuanlan.zhihu.com/p/687058798)

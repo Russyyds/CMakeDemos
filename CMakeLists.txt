@@ -1,16 +1,13 @@
 cmake_minimum_required(VERSION 3.18)
 project(CMakeDemo LANGUAGES CXX)
 
-set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
+list(APPEND CMAKE_PREFIX_PATH "/usr/local/lib")
 
 set(TARGET1 my_math_test)
 project(CMakeDemo LANGUAGES CXX)
 
-set(CMAKE_CXX_STANDARD 11)
-set(CMAKE_CXX_STANDARD_REQUIRED ON)
-
-set(TARGET1 my_math_test)
 
 # 添加编译器编译选项
 list(APPEND compiler_flags "-fPIC" "-Wall" "-Wextra" "-Wpedantic" "-O2")
@@ -41,3 +38,7 @@ FetchContent_MakeAvailable(fmt)
 target_link_libraries(${TARGET1} PUBLIC fmt::fmt)
 
 install(TARGETS ${TARGET1} DESTINATION bin)
+
+# Add test case 
+enable_testing()
+add_subdirectory(test)
