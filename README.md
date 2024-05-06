@@ -13,9 +13,18 @@ cd build
 cmake ..
 make -j 4
 ```
+or 
+```bash
+cmake -B build
+cmake --build build
+```
 安装**my_math_test**
 ```bash
 make install
+```
+or 
+```bash
+ sudo cmake  --build build -- install
 ```
 
 ## 文字版教程
